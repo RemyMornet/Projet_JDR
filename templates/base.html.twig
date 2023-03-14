@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport"
+                  content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+            {# css / javascript #}
+
+            <link rel="stylesheet" href="{{ ('css/app.css') }}">
+            <script src="https://kit.fontawesome.com/8c94095c90.js" crossorigin="anonymous"></script>
+
+            {# Google font si on veut en dessous #}
+
+            <title>{% block title %}JDRPG-Tek{% endblock %}</title>
+
+            <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
+            {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+            {% block stylesheets %}
+                {{ encore_entry_link_tags('app') }}
+                <link rel="stylesheet" href="css/app.css">
+            {% endblock %}
+
+            {% block javascripts %}
+                {{ encore_entry_scripts_tags('app') }}
+            {% endblock %}
+
     </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+
+        <body>
+
+            <header>
+                <div> {% include('nav/navbar.html.twig') %}</div>
+            </header>
+
+            <main>
+                    <div class="container">
+                        {% block body %}
+
+
+                        {% endblock %}
+                    </div>
+
+            </main>
+
+            <footer>
+                <div class="container">©Seau de Liste {{ "now"|date("Y") }}></div>
+            </footer>
+        </body>
 </html>
