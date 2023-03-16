@@ -24,7 +24,8 @@
             {% endblock %}
 
             {% block javascripts %}
-                {{ encore_entry_scripts_tags('app') }}
+                {{ encore_entry_link_tags('app') }}
+                <link rel="script" href="js/app.js">
             {% endblock %}
 
     </head>
