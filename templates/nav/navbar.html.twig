@@ -1,9 +1,15 @@
 <nav class="navbar">
     <ul class="navbar-menu">
         <li class="navbar-item">
-            <a href="../login.html.twig" class="navbar-link">
+            <a href="{{ path('login') }}" class="navbar-link">
                 <i class=""></i>
                 <span class="navbar-title">login</span>
+            </a>
+        </li>
+        <li class="navbar-item">
+            <a href="{{ path('home') }}" class="navbar-link">
+                <i class=""></i>
+                <span class="navbar-title">Accueil</span>
             </a>
         </li>
     </ul>
